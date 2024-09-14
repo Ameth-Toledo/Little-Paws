@@ -14,22 +14,34 @@ body {
 /*nav */
 header {
     padding: 1.7rem 1rem;
-    background-color: #fff;
+    background-color: #2C3E50;
     display: flex;
     justify-content: space-between;
-    max-width: 80%;
-    margin: auto;
     align-items: center;
-    background-color: transparent;
+    max-width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 10;
+    border-radius: 20px 0px 20px 0px;
+    margin: 10px auto;
+    width: 90%;
+    transition: background-color 0.3s ease;
+}
+
+header:hover {
+  background-color: #34495E;
 }
 
 .logo {
+    margin-left: -400px;
     font-size: 1.3rem;
     font-weight: 800;
 }
 
 .logo-little {
     width: 50px;
+    border-radius: 50%;
+    box-shadow: 0px 4px 15px rgba(0, 232, 248, 0.7);
 }
 
 .logo a {
@@ -51,7 +63,8 @@ nav a.active,
 nav a:hover {
     color: #00E8F8;
     border-radius: 1rem;
-    transition: all.3s ease-in-out;
+    background-color: rgba(0, 232, 248, 0.1);
+    padding: 0.4rem 1.2rem;
 }
 
 #click {
@@ -168,4 +181,145 @@ section {
     section {
         margin: 1rem 1.5rem;
     }
+}
+
+
+/*catalogo*/
+.wrapper{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  margin-top: 4rem;
+}
+.container{
+  height: 400px;
+  display: flex;
+  flex-direction: nowrap;
+  justify-content: start;
+}
+.card{
+  width: 80px;
+  border-radius: .75rem;
+  background-size: cover;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 2rem;
+  margin: 0 10px;
+  display: flex;
+  align-items: flex-end;
+  transition: .6s cubic-bezier(.28, -0.03,0,0.99);
+  box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
+}
+.card > .row{
+  color: white;
+  display: flex;
+  flex-direction: nowrap;
+}
+.card > .row > .icon{
+  background: #223;
+  color: white;
+  border-radius: 50%;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px;
+}
+.card > .row > .description{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  height: 80px;
+  width: 520px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition-delay: .3s;
+  transition: all .3s ease;
+}
+.description p{
+  color: #ffffff;
+  padding-top: 5px;
+
+}
+.description h4{
+  text-transform: uppercase;
+}
+input{
+  display: none;
+}
+input:checked + label{
+  width: 600px;
+}
+input:checked + label .description{
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+
+}
+.card[for="c1"]{
+  background-image: url('src/assets/Perritos/Perritos1.png');
+}
+.card[for="c2"]{
+  background-image: url('src/assets/Perritos/Perritos2.png');
+}
+.card[for="c3"]{
+  background-image: url('src/assets/Perritos/Perritos3.png');
+}
+.card[for="c4"]{
+  background-image: url('src/assets/Perritos/Perritos4.png');
+}
+
+.card[for="c5"] {
+  background-image: url('src/assets/Perritos/Perritos5.png');
+}
+
+.barra {
+  width: 100%;
+  background: linear-gradient(to right, rgba(0, 232, 248, 0) 0%, #00E8F8 25%, #00E8F8 75%, rgba(0, 232, 248, 0) 100%);
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.frase {
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  padding: 0.5rem;
+  line-height: 1.3;
+  transition: all 0.3s ease;
+}
+
+.barra:hover .frase {
+  text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.7);
+}
+
+
+/*Estilos de la barra de scroll*/
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Fondo de la barra de desplazamiento */
+::-webkit-scrollbar-track {
+  background: #1F252E; /* Color de fondo del scroll, este color pa que se vea deñ mismo que la web */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #00E8F8; /* Color del scroll */
+  border-radius: 10px;
+  border: 2px solid #1F252E; /* Espacio entre el scroll y el borde de la web*/
+}
+
+/* Estilo del thumb cuando se pasa el ratón por encima */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #00C4D8;
 }
